@@ -1,0 +1,24 @@
+{
+  "name": "dionisvl/apigun",
+  "description": "Module for websockets based API tester ",
+  "authors": [
+    {
+      "name": "Den",
+      "email": "dionisvl3@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "dionisvl\\apigun\\": "./src"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "cboden/ratchet": "^0.4.3",
+    "ext-json": "*",
+    "react/http": "1.3"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  }
+}
