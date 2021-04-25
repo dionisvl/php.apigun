@@ -9,12 +9,12 @@ $loop = React\EventLoop\Factory::create();
 $client = new React\Http\Browser($loop);
 //$client->withTimeout(60.0);
 
-$name = generateRandomString(100000);
-print_r($name . PHP_EOL);
+$name = generateRandomString(4000000);
+//print_r($name . PHP_EOL);
 $post_body = http_build_query(['name' => $name, 'message' => 'sdfsdf']);
 
 
-for ($i = 1; $i < 2; $i++) {
+for ($i = 1; $i < 500; $i++) {
     $start = microtime(true);
 
     //https://swapi.dev/api/planets/3/?format=json
@@ -25,8 +25,9 @@ for ($i = 1; $i < 2; $i++) {
         ],
         $post_body
     )
+//    $client->get('https://phpqa.ru')
         ->then(function (ResponseInterface $response) use ($start, $i) {
-            var_dump((string)$response->getBody());
+            //var_dump((string)$response->getBody());
             $status = (string)$response->getStatusCode();
 
             $end = microtime(true);
